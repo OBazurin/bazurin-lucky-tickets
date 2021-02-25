@@ -14,6 +14,11 @@ namespace bazurin_lucky_tickets
                 List<byte> numbers = new List<byte>();
                 Console.Write("Input ticket number: ");
                 var ticketNumber = Console.ReadLine();
+                if (ticketNumber.Length < 4 || ticketNumber.Length > 8)
+                {
+                    Console.WriteLine("PLease input number with length 4 to 8");
+                    continue;
+                }
                 foreach (var item in ticketNumber)
                 {
                     numbers.Add((byte)char.GetNumericValue(item));
